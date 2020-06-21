@@ -9,7 +9,7 @@ void ConnectHandler::ready_read()
    auto this_class_ptr(shared_from_this());
 
    //The response message sent by the server may differ in length, but must end as follows:
-   // '\n ' so we use this character as a separator when calling the function
+   // '\n' so we use this character as a separator when calling the function
    async_read_until(m_server_socket, m_buffer, '\n',
                    [this_class_ptr](const boost::system::error_code& err, size_t sz){
 
